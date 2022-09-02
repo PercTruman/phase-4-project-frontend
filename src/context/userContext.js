@@ -42,4 +42,4 @@ function UserProvider({ children }) {
 }
 
 const UserConsumer = UserContext.Consumer;
-export { UserProvider, UserConsumer };
+export { UserContext, UserProvider, UserConsumer };

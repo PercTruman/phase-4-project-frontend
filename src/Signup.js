@@ -1,8 +1,8 @@
 import React, { useState, useContext } from "react";
-import { UserConsumer } from "../src/context/userContext";
-import { useNavigate } from "BrowserRouter";
+import { UserConsumer } from "./context/userContext";
+import { useNavigate } from "react-router-dom";
 
-export const Signup = () => {
+const Signup = () => {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [passwordConfirmation, setPasswordConfirmation] = useState("")
@@ -68,3 +68,5 @@ export const Signup = () => {
     </div>
   );
 };
+
+export default Signup;
