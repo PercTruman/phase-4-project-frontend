@@ -1,21 +1,10 @@
-import React from 'react'
-import { UserConsumer } from '../src/context/userContext'
+import React from "react";
+import { UserConsumer } from "../src/context/userContext";
 
- const Login = () => {
+const Login = () => {
   return (
-   <UserConsumer>
-      {context =>
-       <h1> {context.user.name}</h1>
-     }
-     
-   </UserConsumer>
-      
-    
-     
- 
-  )
- }
+    <UserConsumer>{(context) => <h1> {context.user.name}</h1>}</UserConsumer>
+  );
+};
 
-
-
-export default Login
+export default Login;

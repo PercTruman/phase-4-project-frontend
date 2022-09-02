@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import Login from "./Login";
 import { UserConsumer } from "../src/context/userContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "BrowserRouter";
 
 export const Signup = () => {
     const [username, setUsername] = useState("")
@@ -46,13 +46,16 @@ export const Signup = () => {
                 id = "username"
                 value = {username}
                 onChange={(e) => setUsername(e.target.value)}
-            />
+            /> <br/>
+            <label>Password:</label>
              <input
                 type="password"
                 id = "password"
                 value = {password}
                 onChange={(e) => setPassword(e.target.value)}
             />
+             <br/>
+            <label>Password Confirmation:</label>
              <input
                 type="password"
                 id = "passwordConfirmation"
