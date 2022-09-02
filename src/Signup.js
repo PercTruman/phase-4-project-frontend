@@ -11,19 +11,55 @@ export const Signup = () => {
     const {signup} = useContext(UserConsumer)
     const navigate = useNavigate()
 
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        fetch('signup', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                username: username,
+                password: password,
+                password_confirmation: passwordConfirmation
+        })
+    })
+       .then(res => res.json())
+       .then(user => {
+         if (!user.errors) {
+            signup(user)
+            navigate('/')
+         } else {
+            setUsername("")
+            setPassword("")
+            setPasswordConfirmation("")
+            const errorLis = user.errors.map(e => <li>{e}</li>)
+            setErrorsList(errorLis)
+        }
+    })
+}
+
   return (
-    <UserConsumer>
-      <h3>Create account with email address and password</h3>
-      {(context) => (
-        <input
-          type="email"
-          onChange={handleChange}
-          value={context.user.password}
-        >
-          Email
-        </input>
-      )}
-      <Login />
-    </UserConsumer>
+    <div>
+        <form onSubmit={handleSubmit}>
+            <label>Username:</label>
+            <input
+                type="text"
+                id = "username"
+                value = {username}
+                onChange={(e) => setUsername(e.target.value)}
+            />
+             <input
+                type="password"
+                id = "password"
+                value = {password}
+                onChange={(e) => setPassword(e.target.value)}
+            />
+             <input
+                type="password"
+                id = "passwordConfirmation"
+                value = {passwordConfirmation}
+                onChange={(e) => setPasswordConfirmation(e.target.value)}
+            />
+        </form>
+    </div>
   );
 };
