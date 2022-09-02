@@ -1,5 +1,4 @@
 import React, { useState, useContext } from "react";
-import Login from "./Login";
 import { UserConsumer } from "../src/context/userContext";
 import { useNavigate } from "BrowserRouter";
 
@@ -63,6 +62,9 @@ export const Signup = () => {
                 onChange={(e) => setPasswordConfirmation(e.target.value)}
             />
         </form>
+        <ul>
+            {errorsList}
+        </ul>
     </div>
   );
 };
