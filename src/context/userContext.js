@@ -5,7 +5,8 @@ const UserContext = React.createContext();
 // Provider
 function UserProvider({ children }) {
   const [user, setUser] = useState({
-    name: "Shawn"
+    name: "Shawn",
+    password: "password"
   });
   const [loggedIn, setLoggedIn] = useState(false);
 
