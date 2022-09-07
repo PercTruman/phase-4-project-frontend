@@ -1,8 +1,11 @@
 import React, {useContext} from 'react'
+import {Routes, Route} from 'react-router-dom'
+import Login from './Login';
 import Navbar from './Navbar'
 import Welcome from './Welcome';
 import Signup from './Signup';
 import {UserContext} from './context/UserContext'
+
 
 
 function App() {
@@ -11,7 +14,11 @@ function App() {
   return (
     <div className="App">
       <Welcome />
-      <Navbar />
+      <Routes>
+        <Route path ="/login" element = {<Login />} />
+        <Route path ="/signup" element = {<Signup />} />
+      </Routes>
+      {/* <Navbar /> */}
       {/* <Signup /> */}
       
     </div>

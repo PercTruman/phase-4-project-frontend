@@ -10,7 +10,7 @@ function UserProvider({ children }) {
     email: "shawn@gmail.com",
     password: "password"
   });
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
 
   // useEffect(() => {
   //   fetch("/me")

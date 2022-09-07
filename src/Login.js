@@ -1,9 +1,11 @@
-import React from "react";
-import { UserConsumer } from "../src/context/UserContext";
+import React, {useContext} from "react";
+import { UserContext } from "./context/UserContext";
 
 const Login = () => {
+  const context = useContext(UserContext)
+  console.log(context)
   return (
-    <UserConsumer>{(context) => <h1> {context.user.name}</h1>}</UserConsumer>
+    <UserContext.Consumer>{(context) => <h1> {context.user.name}</h1>}</UserContext.Consumer>
   );
 };
 

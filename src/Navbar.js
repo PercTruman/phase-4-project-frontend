@@ -5,6 +5,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 const Navbar = () => {
   const { user, logout, loggedIn } = useContext(UserContext);
   const navigate = useNavigate();
+ 
 
   const logoutUser = (user) => {
     fetch("/logout", {
@@ -14,11 +15,13 @@ const Navbar = () => {
       logout();
       navigate("/");
     });
-
+  }
     if (loggedIn) {
+      console.log(user)
       return (
         <div>
-          <h3>Hello {user.name}</h3>
+           
+          <h3>Hello {user.firstName}</h3>
           <button onClick={logoutUser}>Logout</button>
           <hr />
         </div>
@@ -36,7 +39,7 @@ const Navbar = () => {
         </div>
       );
     }
-  };
+  
 };
 
 export default Navbar
