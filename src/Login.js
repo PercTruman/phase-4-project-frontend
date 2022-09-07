@@ -2,10 +2,31 @@ import React, {useContext} from "react";
 import { UserContext } from "./context/UserContext";
 
 const Login = () => {
-  const context = useContext(UserContext)
-  console.log(context)
+  const {email, setEmail, password, setPassword} = useContext(UserContext)
+  
   return (
-    <UserContext.Consumer>{(context) => <h1> {context.user.name}</h1>}</UserContext.Consumer>
+    <div>
+      <form onSubmit={handleSubmit}>
+      <h2>Login Component</h2>
+        <label>Email Address:</label>
+        <input
+          type="email"
+          id="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />{" "}
+        <br />
+        <label>Password:</label>
+        <input
+          type="password"
+          id="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <br />
+        <button type="submit">Log In</button>
+        </form>
+    </div>
   );
 };
 

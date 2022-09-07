@@ -17,9 +17,9 @@ const Navbar = () => {
     });
   }
     if (loggedIn) {
-      console.log(user)
       return (
         <div>
+          <h2>Navbar Component</h2>
            
           <h3>Hello {user.firstName}</h3>
           <button onClick={logoutUser}>Logout</button>
@@ -29,6 +29,7 @@ const Navbar = () => {
     } else {
       return (
         <div>
+           <h2>Navbar Component</h2>
           <NavLink to="/login">
             <button>Login</button>
           </NavLink>

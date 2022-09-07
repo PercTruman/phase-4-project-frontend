@@ -1,13 +1,17 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate , NavLink } from 'react-router-dom'
 
 function Welcome() {
     let navigate = useNavigate();
   return (
     <div>Welcome to Class-ify, your hub for students and their assignments.
         Please login or signup.
-        <button onClick = {()=> navigate('/login')}>Login</button>
-        <button onClick = {()=> navigate('/signup')}>SignUp</button>
+        <NavLink to="/login">
+            <button>Login</button>
+          </NavLink>
+          <NavLink to="/signup">
+            <button>Signup</button>
+          </NavLink>
     </div>
   )
 }
