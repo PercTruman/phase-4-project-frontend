@@ -66,7 +66,7 @@ const Signup = () => {
           type="email"
           id="email"
           value={email}
-          onChange={(e) => setUsername(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
         />{" "}
         <br />
         <label>Password:</label>

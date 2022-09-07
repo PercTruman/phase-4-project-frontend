@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, createContext } from "react";
 
-const UserContext = React.createContext();
+const UserContext = createContext();
 
 // Provider
 function UserProvider({ children }) {
   const [user, setUser] = useState({
-    name: "Shawn",
+    firstName: "Shawn",
+    lastName: "Hart",
+    email: "shawn@gmail.com",
     password: "password"
   });
   const [loggedIn, setLoggedIn] = useState(true);
@@ -42,4 +44,4 @@ function UserProvider({ children }) {
 }
 
 const UserConsumer = UserContext.Consumer;
-export { UserContext, UserProvider, UserConsumer };
+export { UserContext, UserConsumer };
