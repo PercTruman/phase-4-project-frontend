@@ -1,8 +1,8 @@
 import React from 'react'
-import { useNavigate , NavLink } from 'react-router-dom'
+import {  NavLink } from 'react-router-dom'
 
 function Welcome() {
-    let navigate = useNavigate();
+    
   return (
     <div>Welcome to Class-ify, your hub for students and their assignments.
         Please login or signup.

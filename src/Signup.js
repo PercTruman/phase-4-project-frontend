@@ -44,6 +44,7 @@ const Signup = () => {
 
   return (
     <div>
+        <h2> SignUp Component</h2>
       <form onSubmit={handleSubmit}>
         <label>First Name:</label>
         <input
