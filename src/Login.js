@@ -1,5 +1,5 @@
 import React from "react";
-import { UserConsumer } from "../src/context/userContext";
+import { UserConsumer } from "../src/context/UserContext";
 
 const Login = () => {
   return (

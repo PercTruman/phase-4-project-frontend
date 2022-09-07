@@ -2,8 +2,8 @@ import React, { useState, useEffect, createContext } from "react";
 
 const UserContext = createContext();
 
-// Provider
-function UserProvider({ children }) {
+// Provider---"children in this case refers to App component"
+function UserProvider({ children }) {   
   const [user, setUser] = useState({
     firstName: "Shawn",
     lastName: "Hart",
@@ -44,4 +44,4 @@ function UserProvider({ children }) {
 }
 
 const UserConsumer = UserContext.Consumer;
-export { UserContext, UserConsumer };
+export { UserContext, UserProvider };

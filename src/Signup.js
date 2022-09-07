@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { UserConsumer } from "./context/userContext";
+import { UserContext } from "./context/UserContext";
 import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
@@ -9,7 +9,7 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [errorsList, setErrorsList] = useState([]);
-  const { signup } = useContext(UserConsumer);
+  const { signup } = useContext(UserContext);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
