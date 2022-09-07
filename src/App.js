@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
-import Home from './Home'
 import Navbar from './Navbar'
+import Welcome from './Welcome';
 import Signup from './Signup';
 import {UserContext} from './context/UserContext'
 
@@ -10,9 +10,10 @@ function App() {
   console.log(context)
   return (
     <div className="App">
-      <Home />
+      <Welcome />
       <Navbar />
-      <Signup />
+      {/* <Signup /> */}
+      
     </div>
   );
 }

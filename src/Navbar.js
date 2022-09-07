@@ -20,6 +20,7 @@ const Navbar = () => {
         <div>
           <h3>Hello {user.name}</h3>
           <button onClick={logoutUser}>Logout</button>
+          <hr />
         </div>
       );
     } else {
@@ -31,6 +32,7 @@ const Navbar = () => {
           <NavLink to="/signup">
             <button>Signup</button>
           </NavLink>
+          <hr />
         </div>
       );
     }
