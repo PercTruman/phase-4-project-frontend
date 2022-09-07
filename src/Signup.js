@@ -8,13 +8,13 @@ const Signup = () => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
-  const [errorsList, setErrorsList] = useState([]);
-  const { signup } = useContext(UserContext);
+  
+  const { signup, errorsList, setErrorsList } = useContext(UserContext);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("/signup", {
+    fetch("/teachers", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

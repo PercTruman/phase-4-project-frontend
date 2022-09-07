@@ -11,6 +11,7 @@ function UserProvider({ children }) {
     password: "password"
   });
   const [loggedIn, setLoggedIn] = useState(true);
+  const [errorsList, setErrorsList] = useState([]);
 
   // useEffect(() => {
   //   fetch("/me")
@@ -37,7 +38,7 @@ function UserProvider({ children }) {
   };
 
   return (
-    <UserContext.Provider value={{ user, login, logout, signup, loggedIn }}>
+    <UserContext.Provider value={{ user, login, logout, signup, loggedIn, errorsList, setErrorsList }}>
       {children}
     </UserContext.Provider>
   );
