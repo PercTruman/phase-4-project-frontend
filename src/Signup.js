@@ -18,8 +18,8 @@ const Signup = () => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        firstName: firstName,
-        lastName: lastName,
+        first_name: firstName,
+        last_name: lastName,
         email: email,
         password: password,
         password_confirmation: passwordConfirmation,
