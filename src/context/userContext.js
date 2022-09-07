@@ -8,7 +8,7 @@ function UserProvider({ children }) {
     name: "Shawn",
     password: "password"
   });
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
 
   // useEffect(() => {
   //   fetch("/me")
