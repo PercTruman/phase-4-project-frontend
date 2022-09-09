@@ -31,23 +31,11 @@ const Login = () => {
         });
       } else {
         res.json().then((errors) => {
-          alert(errors.error)
-      
-      })
-    }});
-    // .then((teacher) => {
-    //   console.log(teacher)
-    //    if (!teacher.error) {
-    //      login(teacher);
-    //      navigate("/home");
-    //    } else {
-    //      navigate("/");
-
-    // const errorLis = teacher.error.map((e) => <li>{e}</li>);
-    // setErrorsList(errorLis);
+          alert(errors.error);
+        });
+      }
+    });
   };
-  //     });
-  // };
 
   return (
     <div>

@@ -22,6 +22,9 @@ const Navbar = () => {
           <h2>Navbar Component</h2>
            
           <h3>Hello {user.first_name}</h3>
+          <NavLink to="/students">
+            <button>Add Student</button>
+          </NavLink>
           <button onClick={logoutUser}>Logout</button>
           <hr />
         </div>
