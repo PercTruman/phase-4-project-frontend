@@ -14,7 +14,7 @@ const Signup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("/teachers", {
+    fetch("/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -29,7 +29,7 @@ const Signup = () => {
       .then((user) => {
         if (!user.errors) {
           signup(user);
-          navigate("/");
+          navigate("/home");
         } else {
           setFirstName("");
           setLastName("");
@@ -42,13 +42,15 @@ const Signup = () => {
       });
   };
 
+
   return (
     <div>
-        <h2> SignUp Component</h2>
+      <h2> SignUp Component</h2>
       <form onSubmit={handleSubmit}>
         <label>First Name:</label>
         <input
           type="text"
+          autoComplete="on"
           id="firstName"
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
@@ -57,6 +59,7 @@ const Signup = () => {
         <label>Last Name:</label>
         <input
           type="text"
+          autoComplete="on"
           id="lastName"
           value={lastName}
           onChange={(e) => setLastName(e.target.value)}
@@ -65,6 +68,7 @@ const Signup = () => {
         <label>Email Address:</label>
         <input
           type="email"
+          autoComplete="on"
           id="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -73,6 +77,7 @@ const Signup = () => {
         <label>Password:</label>
         <input
           type="password"
+          autoComplete="on"
           id="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -81,6 +86,7 @@ const Signup = () => {
         <label>Password Confirmation:</label>
         <input
           type="password"
+          autoComplete="on"
           id="passwordConfirmation"
           value={passwordConfirmation}
           onChange={(e) => setPasswordConfirmation(e.target.value)}

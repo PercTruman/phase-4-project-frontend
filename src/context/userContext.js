@@ -4,23 +4,20 @@ const UserContext = createContext();
 
 // Provider---"children in this case refers to App component"
 function UserProvider({ children }) {   
-  const [user, setUser] = useState({
-    firstName: "Shawn",
-    lastName: "Hart",
-    email: "shawn@gmail.com",
-    password: "password"
-  });
-  const [loggedIn, setLoggedIn] = useState(true);
+  const [user, setUser] = useState({});
+  const [loggedIn, setLoggedIn] = useState(false);
   const [errorsList, setErrorsList] = useState([]);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  // useEffect(() => {
-  //   fetch("/me")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setUser(data);
-  //       data.error ? setLoggedIn(false) : setLoggedIn(true);
-  //     });
-  // }, []);
+  useEffect(() => {
+    fetch("/me")
+      .then((res) => res.json())
+      .then((data) => {
+        setUser(data);
+        data.error ? setLoggedIn(false) : setLoggedIn(true);
+      });
+  }, []);
 
   const login = (user) => {
     setUser(user);
@@ -38,11 +35,11 @@ function UserProvider({ children }) {
   };
 
   return (
-    <UserContext.Provider value={{ user, login, logout, signup, loggedIn, errorsList, setErrorsList }}>
+    <UserContext.Provider value={{ user, login, logout, signup, setEmail, setPassword, loggedIn, errorsList, setErrorsList }}>
       {children}
     </UserContext.Provider>
   );
 }
 
-const UserConsumer = UserContext.Consumer;
+// const UserConsumer = UserContext.Consumer; 
 export { UserContext, UserProvider };

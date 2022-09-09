@@ -21,7 +21,7 @@ const Navbar = () => {
         <div>
           <h2>Navbar Component</h2>
            
-          <h3>Hello {user.firstName}</h3>
+          <h3>Hello {user.first_name}</h3>
           <button onClick={logoutUser}>Logout</button>
           <hr />
         </div>
