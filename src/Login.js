@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { UserContext } from "./context/UserContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const Login = () => {
   const { email, password, login, errorsList, setErrorsList } =
@@ -10,6 +10,7 @@ const Login = () => {
     email: "",
     password: "",
   });
+
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -27,7 +28,7 @@ const Login = () => {
       if (res.ok) {
         res.json().then((teacher) => {
           login(teacher);
-          navigate("/home");
+          navigate(`/teachers/${teacher.id}/students`);
         });
       } else {
         res.json().then((errors) => {

@@ -4,16 +4,17 @@ const UserContext = createContext();
 
 // Provider---"children in this case refers to App component"
 function UserProvider({ children }) {   
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState(null);
   const [loggedIn, setLoggedIn] = useState(false);
   const [errorsList, setErrorsList] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+ 
   useEffect(() => {
     fetch("/me")
       .then((res) => res.json())
       .then((data) => {
+        console.log(data)
         setUser(data);
         data.error ? setLoggedIn(false) : setLoggedIn(true);
       });
@@ -23,6 +24,7 @@ function UserProvider({ children }) {
     setUser(user);
     setLoggedIn(true);
   };
+  console.log(loggedIn)
 
   const logout = (user) => {
     setUser({});
