@@ -4,7 +4,7 @@ import Login from "./Login";
 import Home from "./Home";
 import Welcome from "./Welcome";
 import Signup from "./Signup";
-import Students from "./Students";
+import Assignments from "./Assignments";
 // import { UserContext } from "./context/UserContext";
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/teachers/:id/students" element={<Home />} />
-        <Route path="/students" element={<Students />} />
+        <Route path="/teachers/:id/assignments" element={<Assignments />} />
       </Routes>
     </div>
   );

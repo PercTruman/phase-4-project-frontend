@@ -4,7 +4,6 @@ import Navbar from "./Navbar";
 
 const Home = () => {
   const [myStudents, setMyStudents] = useState([]);
-  const [myAssignments, setMyAssignments] = useState([]);
 
   const { user, loggedIn } = useContext(UserContext);
 
@@ -21,26 +20,7 @@ const Home = () => {
             ))
           );
         });
-
-        fetch(`/teachers/${user.id}/assignments`)
-        .then((res) => res.json())
-        .then((data) => {
-          setMyAssignments(
-            data.map((a) => (
-              <li key={a.id}>
-                {a.title}
-              </li>
-            ))
-          );
-        });
-    
-    
-    
-    
-    
-    
-    
-      }
+    }
   }, [user]);
 
   return user ? (
@@ -49,8 +29,7 @@ const Home = () => {
       <h3>{user.first_name}'s Homepage</h3>
       <ul>My Students:</ul>
       {myStudents}
-      <ul>My Assignments:</ul>
-      {myAssignments}
+      
     </div>
   ) : null;
 };
